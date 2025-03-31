@@ -1,1 +1,5 @@
-local gandon3 = false
+return {
+    swaggaON = false,
+    dea = false,
+    chiperneki = false
+}
