@@ -2,151 +2,130 @@ local NotifyModule = {}
 
 local TweenService = game:GetService("TweenService")
 
-local Core = script.Parent
+-- Создание GUI
+NotifyModule["1"] = Instance.new("ScreenGui")
+NotifyModule["1"].Name = "UniversalNotifier"
+NotifyModule["1"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+NotifyModule["1"].Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 
--- StarterGui.UniversalNotifier
-NotifyModule["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-NotifyModule["1"]["Name"] = [[UniversalNotifier]];
-NotifyModule["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+NotifyModule["2"] = Instance.new("Frame")
+NotifyModule["2"].Name = "Handle"
+NotifyModule["2"].BorderSizePixel = 0
+NotifyModule["2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NotifyModule["2"].AnchorPoint = Vector2.new(1, 0.5)
+NotifyModule["2"].Size = UDim2.new(0.25, 0, 0.95, 0)
+NotifyModule["2"].Position = UDim2.new(1, 0, 0.5, 0)
+NotifyModule["2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+NotifyModule["2"].BackgroundTransparency = 1
+NotifyModule["2"].Parent = NotifyModule["1"]
 
--- StarterGui.UniversalNotifier.Handle
-NotifyModule["2"] = Instance.new("Frame", NotifyModule["1"]);
-NotifyModule["2"]["BorderSizePixel"] = 0;
-NotifyModule["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-NotifyModule["2"]["AnchorPoint"] = Vector2.new(1, 0.5);
-NotifyModule["2"]["Size"] = UDim2.new(0.25, 0, 0.95, 0);
-NotifyModule["2"]["Position"] = UDim2.new(1, 0, 0.5, 0);
-NotifyModule["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-NotifyModule["2"]["Name"] = [[Handle]];
-NotifyModule["2"]["BackgroundTransparency"] = 1;
+NotifyModule["3"] = Instance.new("UIListLayout")
+NotifyModule["3"].HorizontalAlignment = Enum.HorizontalAlignment.Center
+NotifyModule["3"].Padding = UDim.new(0.03, 0)
+NotifyModule["3"].VerticalAlignment = Enum.VerticalAlignment.Bottom
+NotifyModule["3"].SortOrder = Enum.SortOrder.LayoutOrder
+NotifyModule["3"].Parent = NotifyModule["2"]
 
+NotifyModule["4"] = Instance.new("Folder")
+NotifyModule["4"].Name = "Anims"
+NotifyModule["4"].Parent = NotifyModule["1"]
 
--- StarterGui.UniversalNotifier.Handle.UIListLayout
-NotifyModule["3"] = Instance.new("UIListLayout", NotifyModule["2"]);
-NotifyModule["3"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-NotifyModule["3"]["Padding"] = UDim.new(0.03, 0);
-NotifyModule["3"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
-NotifyModule["3"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+NotifyModule["6"] = Instance.new("Frame")
+NotifyModule["6"].Name = "Notify"
+NotifyModule["6"].Visible = false
+NotifyModule["6"].BorderSizePixel = 0
+NotifyModule["6"].BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+NotifyModule["6"].Size = UDim2.new(0.8, 0, 0.12, 0)
+NotifyModule["6"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+NotifyModule["6"].BackgroundTransparency = 0.2
+NotifyModule["6"].Parent = NotifyModule["4"]
 
+NotifyModule["7"] = Instance.new("UICorner")
+NotifyModule["7"].CornerRadius = UDim.new(0, 10)
+NotifyModule["7"].Parent = NotifyModule["6"]
 
--- StarterGui.UniversalNotifier.Anims
-NotifyModule["4"] = Instance.new("Folder", NotifyModule["1"]);
-NotifyModule["4"]["Name"] = [[Anims]];
+NotifyModule["8"] = Instance.new("TextLabel")
+NotifyModule["8"].Name = "UpText"
+NotifyModule["8"].TextWrapped = true
+NotifyModule["8"].BorderSizePixel = 0
+NotifyModule["8"].TextScaled = true
+NotifyModule["8"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NotifyModule["8"].TextSize = 14
+NotifyModule["8"].FontFace = Font.new("rbxassetid://12187371324", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+NotifyModule["8"].TextColor3 = Color3.fromRGB(255, 255, 255)
+NotifyModule["8"].BackgroundTransparency = 1
+NotifyModule["8"].AnchorPoint = Vector2.new(0.5, 0)
+NotifyModule["8"].Size = UDim2.new(1, 0, 0.3, 0)
+NotifyModule["8"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+NotifyModule["8"].Text = "Up Text"
+NotifyModule["8"].Position = UDim2.new(0.5, 0, 0.04, 0)
+NotifyModule["8"].Parent = NotifyModule["6"]
 
+NotifyModule["9"] = Instance.new("UITextSizeConstraint")
+NotifyModule["9"].MaxTextSize = 30
+NotifyModule["9"].Parent = NotifyModule["8"]
 
--- StarterGui.UniversalNotifier.Anims.AnimHandle
-NotifyModule["5"] = Instance.new("ModuleScript", NotifyModule["4"]);
-NotifyModule["5"]["Name"] = [[AnimHandle]];
+NotifyModule["a"] = Instance.new("ImageLabel")
+NotifyModule["a"].Name = "Neo"
+NotifyModule["a"].ZIndex = -33
+NotifyModule["a"].BorderSizePixel = 0
+NotifyModule["a"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NotifyModule["a"].ImageColor3 = Color3.fromRGB(51, 51, 51)
+NotifyModule["a"].AnchorPoint = Vector2.new(0.5, 0.5)
+NotifyModule["a"].Image = "http://www.roblox.com/asset/?id=107797957062928"
+NotifyModule["a"].Size = UDim2.new(1.2172, 0, 1.5737, 0)
+NotifyModule["a"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+NotifyModule["a"].BackgroundTransparency = 1
+NotifyModule["a"].Position = UDim2.new(0.5, 0, 0.5, 0)
+NotifyModule["a"].Parent = NotifyModule["6"]
 
+NotifyModule["b"] = Instance.new("TextLabel")
+NotifyModule["b"].Name = "Bottom"
+NotifyModule["b"].TextWrapped = true
+NotifyModule["b"].BorderSizePixel = 0
+NotifyModule["b"].TextScaled = true
+NotifyModule["b"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NotifyModule["b"].TextSize = 14
+NotifyModule["b"].FontFace = Font.new("rbxassetid://12187371324", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+NotifyModule["b"].TextColor3 = Color3.fromRGB(255, 255, 255)
+NotifyModule["b"].BackgroundTransparency = 1
+NotifyModule["b"].AnchorPoint = Vector2.new(0.5, 0.5)
+NotifyModule["b"].Size = UDim2.new(1, 0, 0.66, 0)
+NotifyModule["b"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+NotifyModule["b"].Text = "Information"
+NotifyModule["b"].Position = UDim2.new(0.5, 0, 0.67, 0)
+NotifyModule["b"].Parent = NotifyModule["6"]
 
--- StarterGui.UniversalNotifier.Anims.Notify
-NotifyModule["6"] = Instance.new("Frame", NotifyModule["4"]);
-NotifyModule["6"]["Visible"] = false;
-NotifyModule["6"]["BorderSizePixel"] = 0;
-NotifyModule["6"]["BackgroundColor3"] = Color3.fromRGB(11, 11, 11);
-NotifyModule["6"]["Size"] = UDim2.new(0.8, 0, 0.12, 0);
-NotifyModule["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-NotifyModule["6"]["Name"] = [[Notify]];
-NotifyModule["6"]["BackgroundTransparency"] = 0.2;
+NotifyModule["c"] = Instance.new("UITextSizeConstraint")
+NotifyModule["c"].MaxTextSize = 25
+NotifyModule["c"].Parent = NotifyModule["b"]
 
+NotifyModule["d"] = Instance.new("UIScale")
+NotifyModule["d"].Scale = 0
+NotifyModule["d"].Parent = NotifyModule["6"]
 
--- StarterGui.UniversalNotifier.Anims.Notify.UICorner
-NotifyModule["7"] = Instance.new("UICorner", NotifyModule["6"]);
-NotifyModule["7"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- StarterGui.UniversalNotifier.Anims.Notify.UpText
-NotifyModule["8"] = Instance.new("TextLabel", NotifyModule["6"]);
-NotifyModule["8"]["TextWrapped"] = true;
-NotifyModule["8"]["BorderSizePixel"] = 0;
-NotifyModule["8"]["TextScaled"] = true;
-NotifyModule["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-NotifyModule["8"]["TextSize"] = 14;
-NotifyModule["8"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-NotifyModule["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-NotifyModule["8"]["BackgroundTransparency"] = 1;
-NotifyModule["8"]["AnchorPoint"] = Vector2.new(0.5, 0);
-NotifyModule["8"]["Size"] = UDim2.new(1, 0, 0.3, 0);
-NotifyModule["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-NotifyModule["8"]["Text"] = [[Up Text]];
-NotifyModule["8"]["Name"] = [[UpText]];
-NotifyModule["8"]["Position"] = UDim2.new(0.5, 0, 0.04, 0);
-
-
--- StarterGui.UniversalNotifier.Anims.Notify.UpText.UITextSizeConstraint
-NotifyModule["9"] = Instance.new("UITextSizeConstraint", NotifyModule["8"]);
-NotifyModule["9"]["MaxTextSize"] = 30;
-
-
--- StarterGui.UniversalNotifier.Anims.Notify.Neo
-NotifyModule["a"] = Instance.new("ImageLabel", NotifyModule["6"]);
-NotifyModule["a"]["ZIndex"] = -33;
-NotifyModule["a"]["BorderSizePixel"] = 0;
-NotifyModule["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-NotifyModule["a"]["ImageColor3"] = Color3.fromRGB(51, 51, 51);
-NotifyModule["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-NotifyModule["a"]["Image"] = [[http://www.roblox.com/asset/?id=107797957062928]];
-NotifyModule["a"]["Size"] = UDim2.new(1.2172, 0, 1.5737, 0);
-NotifyModule["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-NotifyModule["a"]["BackgroundTransparency"] = 1;
-NotifyModule["a"]["Name"] = [[Neo]];
-NotifyModule["a"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- StarterGui.UniversalNotifier.Anims.Notify.Bottom
-NotifyModule["b"] = Instance.new("TextLabel", NotifyModule["6"]);
-NotifyModule["b"]["TextWrapped"] = true;
-NotifyModule["b"]["BorderSizePixel"] = 0;
-NotifyModule["b"]["TextScaled"] = true;
-NotifyModule["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-NotifyModule["b"]["TextSize"] = 14;
-NotifyModule["b"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-NotifyModule["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-NotifyModule["b"]["BackgroundTransparency"] = 1;
-NotifyModule["b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-NotifyModule["b"]["Size"] = UDim2.new(1, 0, 0.66, 0);
-NotifyModule["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-NotifyModule["b"]["Text"] = [[Information]];
-NotifyModule["b"]["Name"] = [[Bottom]];
-NotifyModule["b"]["Position"] = UDim2.new(0.5, 0, 0.67, 0);
-
-
--- StarterGui.UniversalNotifier.Anims.Notify.Bottom.UITextSizeConstraint
-NotifyModule["c"] = Instance.new("UITextSizeConstraint", NotifyModule["b"]);
-NotifyModule["c"]["MaxTextSize"] = 25;
-
-
--- StarterGui.UniversalNotifier.Anims.Notify.UIScale
-NotifyModule["d"] = Instance.new("UIScale", NotifyModule["6"]);
-NotifyModule["d"]["Scale"] = 0;
-
-function NotifyModule:Notify(AppearTime,UpText,InfoText)
-
-			local NotifierModule = {}
-
-			--OBJECT MODIFICATIONS
-
-			NotifierModule.Scale = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,value)
-
-				TweenService:Create(way.UIScale, 
-
-					TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
-
-					{Scale = value}):Play()
-
-			end
-
-				local Clone = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("UniversalNotifier").Anims.Notify:Clone()
-				Clone.Parent = script.Parent.Parent.Handle
-				Clone.Visible = true
-				Clone.UpText.Text = UpText
-				Clone.Bottom.Text = InfoText
-				NotifierModule.Scale(Clone,0.3,"Linear","In",0,false,1)
-				task.wait(AppearTime)
-				NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
-				task.wait(0.3)
-				Clone:Destroy()
+-- Анимация масштаба
+function NotifyModule:Scale(way, speed, easingStyle, easingDirection, repeatCount, isReversed, value)
+    TweenService:Create(
+        way.UIScale,
+        TweenInfo.new(speed, Enum.EasingStyle[easingStyle], Enum.EasingDirection[easingDirection], repeatCount, isReversed),
+        {Scale = value}
+    ):Play()
 end
 
+-- Основная функция уведомления
+function NotifyModule:Notify(AppearTime, UpText, InfoText)
+    local Clone = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("UniversalNotifier").Anims.Notify:Clone()
+    Clone.Parent = NotifyModule["2"] -- Handle
+    Clone.Visible = true
+    Clone.UpText.Text = UpText
+    Clone.Bottom.Text = InfoText
+
+    self:Scale(Clone, 0.3, "Linear", "In", 0, false, 1)
+    task.wait(AppearTime)
+    self:Scale(Clone, 0.3, "Linear", "Out", 0, false, 0)
+    task.wait(0.3)
+    Clone:Destroy()
+end
 
 return NotifyModule
