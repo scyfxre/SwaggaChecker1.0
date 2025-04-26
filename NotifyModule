@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 13 | Scripts: 0 | Modules: 1 | Tags: 0
+-- Instances: 14 | Scripts: 1 | Modules: 1 | Tags: 0
 local G2L = {};
 
 -- StarterGui.UniversalNotifier
@@ -128,58 +128,80 @@ G2L["d"] = Instance.new("UIScale", G2L["6"]);
 G2L["d"]["Scale"] = 0;
 
 
+-- StarterGui.UniversalNotifier.Anims.LocalScript
+G2L["e"] = Instance.new("LocalScript", G2L["4"]);
+
+
+
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
 local G2L_MODULES = {};
 local function require(Module:ModuleScript)
-	local ModuleState = G2L_MODULES[Module];
-	if ModuleState then
-		if not ModuleState.Required then
-			ModuleState.Required = true;
-			ModuleState.Value = ModuleState.Closure();
-		end
-		return ModuleState.Value;
-	end;
-	return G2L_REQUIRE(Module);
+    local ModuleState = G2L_MODULES[Module];
+    if ModuleState then
+        if not ModuleState.Required then
+            ModuleState.Required = true;
+            ModuleState.Value = ModuleState.Closure();
+        end
+        return ModuleState.Value;
+    end;
+    return G2L_REQUIRE(Module);
 end
 
 G2L_MODULES[G2L["5"]] = {
-	Closure = function()
-		local script = G2L["5"];--LOCALS
+Closure = function()
+    local script = G2L["5"];--LOCALS
 
-		local TweenService = game:GetService("TweenService")
-		local Core = script.Parent
-		local NotifierModule = {}
+local TweenService = game:GetService("TweenService")
 
-		--OBJECT MODIFICATIONS
-		NotifierModule.Scale = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,value)
-			TweenService:Create(way.UIScale, 
-				TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
-				{Scale = value}):Play()
-		end
+local Core = script.Parent
 
-		NotifierModule.Notify = function(AppearTime,UpText,InfoText)
-			local Clone = script.Parent.Notify:Clone()
-			Clone.Parent = script.Parent.Parent.Handle
-			Clone.Visible = true
-			Clone.UpText.Text = UpText
-			Clone.Bottom.Text = InfoText
-			NotifierModule.Scale(Clone,0.3,"Linear","In",0,false,1)
-			task.wait(AppearTime)
-			NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
-			task.wait(0.3)
-			Clone:Destroy()
-		end
+local NotifierModule = {}
 
-		--EXTRA
-		return NotifierModule
-	end;
-};
+--LOCALS
 
--- Function to notify using loadstring
-local function notify(AppearTime, UpText, InfoText)
-	local Notifier = require(G2L["5"])
-	Notifier.Notify(AppearTime, UpText, InfoText)
+
+--OBJECT MODIFICATIONS
+
+NotifierModule.Scale = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,value)
+	
+	TweenService:Create(way.UIScale, 
+		
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+		
+		{Scale = value}):Play()
+	
 end
+
+
+NotifierModule.Notify = function(AppearTime,UpText,InfoText)
+	local Clone = script.Parent.Notify:Clone()
+	Clone.Parent = script.Parent.Parent.Handle
+	Clone.Visible = true
+	Clone.UpText.Text = UpText
+	Clone.Bottom.Text = InfoText
+	NotifierModule.Scale(Clone,0.3,"Linear","In",0,false,1)
+	task.wait(AppearTime)
+	NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
+	task.wait(0.3)
+	Clone:Destroy()
+end
+
+--EXTRA
+
+
+return NotifierModule
+
+end;
+};
+-- StarterGui.UniversalNotifier.Anims.LocalScript
+local function C_e()
+local script = G2L["e"];
+	local c = require(script.Parent.AnimHandle)
+	
+	
+	globalc = c.Notify()
+end;
+task.spawn(C_e);
 
 return G2L["1"], require;
