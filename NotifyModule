@@ -182,11 +182,3 @@ G2L_MODULES[G2L["5"]] = {
 };
 
 return G2L["1"], require;
-
-
-return NotifierModule
-
-end;
-};
-
-return G2L["1"], require;
