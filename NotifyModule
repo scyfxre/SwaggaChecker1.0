@@ -149,7 +149,6 @@ G2L_MODULES[G2L["5"]] = {
 
 		local TweenService = game:GetService("TweenService")
 		local Core = script.Parent
-
 		local NotifierModule = {}
 
 		--OBJECT MODIFICATIONS
@@ -159,27 +158,28 @@ G2L_MODULES[G2L["5"]] = {
 				{Scale = value}):Play()
 		end
 
-		NotifierModule.Notify = function(AppearTime, UpText, InfoText)
+		NotifierModule.Notify = function(AppearTime,UpText,InfoText)
 			local Clone = script.Parent.Notify:Clone()
 			Clone.Parent = script.Parent.Parent.Handle
 			Clone.Visible = true
 			Clone.UpText.Text = UpText
 			Clone.Bottom.Text = InfoText
-			NotifierModule.Scale(Clone, 0.3, "Linear", "In", 0, false, 1)
+			NotifierModule.Scale(Clone,0.3,"Linear","In",0,false,1)
 			task.wait(AppearTime)
-			NotifierModule.Scale(Clone, 0.3, "Linear", "Out", 0, false, 0)
+			NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
 			task.wait(0.3)
 			Clone:Destroy()
 		end
 
-		-- Function to fire notify event
-		NotifierModule.FireNotify = function(AppearTime, UpText, InfoText)
-			NotifierModule.Notify(AppearTime, UpText, InfoText)
-		end
-
-		return NotifierModule -- Return the NotifierModule
+		--EXTRA
+		return NotifierModule
 	end;
 };
 
--- Return the ScreenGui and the require function
-return G2L["1"], function() return G2L_MODULES[G2L["5"]].Closure() end
+-- Function to notify using loadstring
+local function notify(AppearTime, UpText, InfoText)
+	local Notifier = require(G2L["5"])
+	Notifier.Notify(AppearTime, UpText, InfoText)
+end
+
+return G2L["1"], require;
