@@ -1,0 +1,183 @@
+local G2L = {};
+
+-- StarterGui.UniversalNotifier
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[UniversalNotifier]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.UniversalNotifier.Handle
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["AnchorPoint"] = Vector2.new(1, 0.5);
+G2L["2"]["Size"] = UDim2.new(0.25, 0, 0.95, 0);
+G2L["2"]["Position"] = UDim2.new(1, 0, 0.5, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Handle]];
+G2L["2"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.UniversalNotifier.Handle.UIListLayout
+G2L["3"] = Instance.new("UIListLayout", G2L["2"]);
+G2L["3"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["3"]["Padding"] = UDim.new(0.03, 0);
+G2L["3"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
+G2L["3"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.UniversalNotifier.Anims
+G2L["4"] = Instance.new("Folder", G2L["1"]);
+G2L["4"]["Name"] = [[Anims]];
+
+
+-- StarterGui.UniversalNotifier.Anims.AnimHandle
+G2L["5"] = Instance.new("ModuleScript", G2L["4"]);
+G2L["5"]["Name"] = [[AnimHandle]];
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify
+G2L["6"] = Instance.new("Frame", G2L["4"]);
+G2L["6"]["Visible"] = false;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(11, 11, 11);
+G2L["6"]["Size"] = UDim2.new(0.8, 0, 0.12, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Name"] = [[Notify]];
+G2L["6"]["BackgroundTransparency"] = 0.2;
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.UpText
+G2L["8"] = Instance.new("TextLabel", G2L["6"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextScaled"] = true;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["BackgroundTransparency"] = 1;
+G2L["8"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["8"]["Size"] = UDim2.new(1, 0, 0.3, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[Up Text]];
+G2L["8"]["Name"] = [[UpText]];
+G2L["8"]["Position"] = UDim2.new(0.5, 0, 0.04, 0);
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.UpText.UITextSizeConstraint
+G2L["9"] = Instance.new("UITextSizeConstraint", G2L["8"]);
+G2L["9"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.Neo
+G2L["a"] = Instance.new("ImageLabel", G2L["6"]);
+G2L["a"]["ZIndex"] = -33;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["ImageColor3"] = Color3.fromRGB(51, 51, 51);
+G2L["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["a"]["Image"] = [[http://www.roblox.com/asset/?id=107797957062928]];
+G2L["a"]["Size"] = UDim2.new(1.2172, 0, 1.5737, 0);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["BackgroundTransparency"] = 1;
+G2L["a"]["Name"] = [[Neo]];
+G2L["a"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.Bottom
+G2L["b"] = Instance.new("TextLabel", G2L["6"]);
+G2L["b"]["TextWrapped"] = true;
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["TextScaled"] = true;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["BackgroundTransparency"] = 1;
+G2L["b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["b"]["Size"] = UDim2.new(1, 0, 0.66, 0);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Text"] = [[Information]];
+G2L["b"]["Name"] = [[Bottom]];
+G2L["b"]["Position"] = UDim2.new(0.5, 0, 0.67, 0);
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.Bottom.UITextSizeConstraint
+G2L["c"] = Instance.new("UITextSizeConstraint", G2L["b"]);
+G2L["c"]["MaxTextSize"] = 25;
+
+
+-- StarterGui.UniversalNotifier.Anims.Notify.UIScale
+G2L["d"] = Instance.new("UIScale", G2L["6"]);
+G2L["d"]["Scale"] = 0;
+
+
+-- Require G2L wrapper
+local G2L_REQUIRE = require;
+local G2L_MODULES = {};
+local function require(Module:ModuleScript)
+    local ModuleState = G2L_MODULES[Module];
+    if ModuleState then
+        if not ModuleState.Required then
+            ModuleState.Required = true;
+            ModuleState.Value = ModuleState.Closure();
+        end
+        return ModuleState.Value;
+    end;
+    return G2L_REQUIRE(Module);
+end
+
+G2L_MODULES[G2L["5"]] = {
+Closure = function()
+    local script = G2L["5"];--LOCALS
+
+local TweenService = game:GetService("TweenService")
+
+local Core = script.Parent
+
+local NotifierModule = {}
+
+--LOCALS
+
+
+--OBJECT MODIFICATIONS
+
+NotifierModule.Scale = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,value)
+	
+	TweenService:Create(way.UIScale, 
+		
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+		
+		{Scale = value}):Play()
+	
+end
+
+
+NotifierModule.Notify = function(AppearTime,UpText,InfoText)
+	local Clone = script.Parent.Notify:Clone()
+	Clone.Parent = script.Parent.Parent.Handle
+	Clone.Visible = true
+	Clone.UpText.Text = UpText
+	Clone.Bottom.Text = InfoText
+	NotifierModule.Scale(Clone,0.3,"Linear","In",0,false,1)
+	task.wait(AppearTime)
+	NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
+	task.wait(0.3)
+	Clone:Destroy()
+end
+
+--EXTRA
+
+
+return NotifierModule
+
+end;
+};
+
+return G2L["1"], require;
