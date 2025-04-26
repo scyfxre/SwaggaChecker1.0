@@ -136,8 +136,7 @@ function NotifyModule:Notify(AppearTime,UpText,InfoText)
 
 			end
 
-
-				local Clone = script.Parent.Notify:Clone()
+				local Clone = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("UniversalNotifier").Anims.Notify:Clone()
 				Clone.Parent = script.Parent.Parent.Handle
 				Clone.Visible = true
 				Clone.UpText.Text = UpText
