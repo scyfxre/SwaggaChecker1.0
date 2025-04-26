@@ -2,12 +2,11 @@ local NotifyModule = {}
 
 local TweenService = game:GetService("TweenService")
 
--- Функция создания GUI
 function NotifyModule:CreateGui()
     local PlayerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 
     if PlayerGui:FindFirstChild("UniversalNotifier") then
-        return -- Если уже создан, второй раз не создаём
+        return
     end
 
     local ScreenGui = Instance.new("ScreenGui")
@@ -115,7 +114,6 @@ function NotifyModule:Scale(way, speed, easingStyle, easingDirection, repeatCoun
 end
 
 function NotifyModule:Notify(AppearTime, UpText, InfoText)
-    -- Сначала создаём GUI если его нет
     self:CreateGui()
 
     local PlayerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
