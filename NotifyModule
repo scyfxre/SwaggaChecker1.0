@@ -119,7 +119,7 @@ G2L["c"]["MaxTextSize"] = 25;
 G2L["d"] = Instance.new("UIScale", G2L["6"]);
 G2L["d"]["Scale"] = 0;
 
-function NotifyModule:Notify(settings)
+function NotifyModule:Notify(AppearTime,UpText,InfoText)
 	-- Require G2L wrapper
 	local G2L_REQUIRE = require;
 	local G2L_MODULES = {};
@@ -161,7 +161,6 @@ function NotifyModule:Notify(settings)
 			end
 
 
-			NotifierModule.Notify = function(AppearTime,UpText,InfoText)
 				local Clone = script.Parent.Notify:Clone()
 				Clone.Parent = script.Parent.Parent.Handle
 				Clone.Visible = true
@@ -172,7 +171,7 @@ function NotifyModule:Notify(settings)
 				NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
 				task.wait(0.3)
 				Clone:Destroy()
-			end
+			
 
 			--EXTRA
 
