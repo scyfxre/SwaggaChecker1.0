@@ -177,8 +177,9 @@ G2L_MODULES[G2L["5"]] = {
 			NotifierModule.Notify(AppearTime, UpText, InfoText)
 		end
 
-		return NotifierModule
+		return NotifierModule -- Return the NotifierModule
 	end;
 };
 
-return G2L["1"], require;
+-- Return the ScreenGui and the require function
+return G2L["1"], function() return G2L_MODULES[G2L["5"]].Closure() end
