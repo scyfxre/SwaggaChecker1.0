@@ -2,11 +2,14 @@ local NotifyModule = {}
 
 local G2L = {};
 
+local TweenService = game:GetService("TweenService")
+
+local Core = script.Parent
+
 -- StarterGui.UniversalNotifier
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[UniversalNotifier]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-
 
 -- StarterGui.UniversalNotifier.Handle
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -120,33 +123,8 @@ G2L["d"] = Instance.new("UIScale", G2L["6"]);
 G2L["d"]["Scale"] = 0;
 
 function NotifyModule:Notify(AppearTime,UpText,InfoText)
-	-- Require G2L wrapper
-	local G2L_REQUIRE = require;
-	local G2L_MODULES = {};
-	local function require(Module:ModuleScript)
-		local ModuleState = G2L_MODULES[Module];
-		if ModuleState then
-			if not ModuleState.Required then
-				ModuleState.Required = true;
-				ModuleState.Value = ModuleState.Closure();
-			end
-			return ModuleState.Value;
-		end;
-		return G2L_REQUIRE(Module);
-	end
-
-	G2L_MODULES[G2L["5"]] = {
-		Closure = function()
-			local script = G2L["5"];--LOCALS
-
-			local TweenService = game:GetService("TweenService")
-
-			local Core = script.Parent
 
 			local NotifierModule = {}
-
-			--LOCALS
-
 
 			--OBJECT MODIFICATIONS
 
@@ -171,17 +149,6 @@ function NotifyModule:Notify(AppearTime,UpText,InfoText)
 				NotifierModule.Scale(Clone,0.3,"Linear","Out",0,false,0)
 				task.wait(0.3)
 				Clone:Destroy()
-			
-
-			--EXTRA
-
-
-			return NotifierModule
-
-		end;
-	};
-
-	return G2L["1"], require;
 end
 
 
