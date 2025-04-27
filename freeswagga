@@ -1,12 +1,1153 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+local G2L = {};
 
-]]--
+-- StarterGui.KeyLogin
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[KeyLogin]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
-local v0={};v0["1"]=Instance.new("ScreenGui",game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));v0["1"]['IgnoreGuiInset']=true;v0["1"]['DisplayOrder']=999999999;v0["1"]['ScreenInsets']=Enum.ScreenInsets.DeviceSafeInsets;v0["1"]['Name']=[[KeyUI]];v0["2"]=Instance.new("Frame",v0["1"]);v0["2"]['BorderSizePixel']=0;v0["2"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["2"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["2"]['Size']=UDim2.new(0,417,0,270);v0["2"]['Position']=UDim2.new(0.5,0,0.5,0);v0["2"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["2"]['Name']=[[Background]];v0["2"]['BackgroundTransparency']=0.3;v0["3"]=Instance.new("UICorner",v0["2"]);v0["3"]['CornerRadius']=UDim.new(0,15);v0["4"]=Instance.new("TextLabel",v0["2"]);v0["4"]['TextWrapped']=true;v0["4"]['ZIndex']=2;v0["4"]['BorderSizePixel']=0;v0["4"]['TextScaled']=true;v0["4"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["4"]['TextSize']=14;v0["4"]['FontFace']=Font.new([[rbxasset://fonts/families/Jura.json]],Enum.FontWeight.Regular,Enum.FontStyle.Normal);v0["4"]['TextColor3']=Color3.fromRGB(151,151,151);v0["4"]['BackgroundTransparency']=1;v0["4"]['AnchorPoint']=Vector2.new(0.5,0);v0["4"]['Size']=UDim2.new(0.45,0,0.13,0);v0["4"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["4"]['Text']=[[Key Login]];v0["4"]['Name']=[[UpText]];v0["4"]['Position']=UDim2.new(0.5,0,0.02,0);v0["5"]=Instance.new("StringValue",v0["4"]);v0["5"]['Name']=[[TextTransparency]];v0["5"]['Value']=[[TextTransparency]];v0["6"]=Instance.new("ImageLabel",v0["2"]);v0["6"]['ZIndex']= -4;v0["6"]['BorderSizePixel']=0;v0["6"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["6"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["6"]['Image']=[[http://www.roblox.com/asset/?id=140100941233643]];v0["6"]['Size']=UDim2.new(0,517,0,370);v0["6"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["6"]['BackgroundTransparency']=1;v0["6"]['Name']=[[Shadow]];v0["6"]['Position']=UDim2.new(0.5,0,0.5,0);v0["7"]=Instance.new("UIScale",v0["6"]);v0["8"]=Instance.new("StringValue",v0["6"]);v0["8"]['Name']=[[Scale]];v0["8"]['Value']=[[Scale]];v0["9"]=Instance.new("StringValue",v0["6"]);v0["9"]['Name']=[[Scale]];v0["9"]['Value']=[[Scale]];v0['a']=Instance.new("Frame",v0["2"]);v0['a']['BorderSizePixel']=0;v0['a']['BackgroundColor3']=Color3.fromRGB(255,255,255);v0['a']['AnchorPoint']=Vector2.new(0.5,0.5);v0['a']['Size']=UDim2.new(1,0,0.85,0);v0['a']['Position']=UDim2.new(0.5,0,0.575,0);v0['a']['BorderColor3']=Color3.fromRGB(0,0,0);v0['a']['Name']=[[Handle]];v0['a']['BackgroundTransparency']=1;v0['b']=Instance.new("UIListLayout",v0['a']);v0['b']['HorizontalAlignment']=Enum.HorizontalAlignment.Center;v0['b']['Padding']=UDim.new(0.15,0);v0['b']['VerticalAlignment']=Enum.VerticalAlignment.Center;v0['b']['SortOrder']=Enum.SortOrder.LayoutOrder;v0['c']=Instance.new("Frame",v0['a']);v0['c']['ZIndex']=2;v0['c']['BorderSizePixel']=0;v0['c']['BackgroundColor3']=Color3.fromRGB(255,255,255);v0['c']['AnchorPoint']=Vector2.new(0.5,0.5);v0['c']['Size']=UDim2.new(0,250,0,67);v0['c']['Position']=UDim2.new(0.5,0,0.42986,0);v0['c']['BorderColor3']=Color3.fromRGB(0,0,0);v0['c']['Name']=[[KeyBox]];v0['d']=Instance.new("UICorner",v0['c']);v0['d']['CornerRadius']=UDim.new(0,15);v0['e']=Instance.new("ImageLabel",v0['c']);v0['e']['BorderSizePixel']=0;v0['e']['BackgroundColor3']=Color3.fromRGB(255,255,255);v0['e']['ImageTransparency']=0.6;v0['e']['AnchorPoint']=Vector2.new(0.5,0.5);v0['e']['Image']=[[http://www.roblox.com/asset/?id=133198957862263]];v0['e']['Size']=UDim2.new(0,350,0,167);v0['e']['BorderColor3']=Color3.fromRGB(0,0,0);v0['e']['BackgroundTransparency']=1;v0['e']['Name']=[[Shadow]];v0['e']['Position']=UDim2.new(0.5,0,0.5,0);v0['f']=Instance.new("UIScale",v0['e']);v0["10"]=Instance.new("UIGradient",v0['e']);v0["10"]['Rotation']= -90;v0["10"]['Transparency']=NumberSequence.new({NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(0.5,0),NumberSequenceKeypoint.new(1,0)});v0["10"]['Offset']=Vector2.new(0, -0.7);v0["10"]['Color']=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(211,74,255)),ColorSequenceKeypoint.new(1,Color3.fromRGB(109,83,255))});v0["11"]=Instance.new("TextBox",v0['c']);v0["11"]['TextColor3']=Color3.fromRGB(151,151,151);v0["11"]['PlaceholderColor3']=Color3.fromRGB(179,179,179);v0["11"]['ZIndex']=3;v0["11"]['BorderSizePixel']=0;v0["11"]['TextWrapped']=true;v0["11"]['TextSize']=14;v0["11"]['TextScaled']=true;v0["11"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["11"]['FontFace']=Font.new([[rbxasset://fonts/families/Jura.json]],Enum.FontWeight.Regular,Enum.FontStyle.Normal);v0["11"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["11"]['ClearTextOnFocus']=false;v0["11"]['PlaceholderText']=[[Enter Your Key]];v0["11"]['Size']=UDim2.new(0.95,0,0.8,0);v0["11"]['Position']=UDim2.new(0.5,0,0.5,0);v0["11"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["11"]['Text']=[[]];v0["11"]['BackgroundTransparency']=1;v0["12"]=Instance.new("UITextSizeConstraint",v0["11"]);v0["12"]['MaxTextSize']=35;v0["13"]=Instance.new("StringValue",v0["11"]);v0["13"]['Name']=[[TextTransparency]];v0["13"]['Value']=[[TextTransparency]];v0["14"]=Instance.new("StringValue",v0['c']);v0["14"]['Name']=[[Tween]];v0["14"]['Value']=[[TextBoxScale1]];v0["15"]=Instance.new("UIScale",v0['c']);v0["16"]=Instance.new("StringValue",v0['c']);v0["16"]['Name']=[[Checker]];v0["16"]['Value']=[[BackgroundTransparency]];v0["17"]=Instance.new("ImageButton",v0['a']);v0["17"]['BorderSizePixel']=0;v0["17"]['AutoButtonColor']=false;v0["17"]['ImageTransparency']=1;v0["17"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["17"]['LayoutOrder']=1;v0["17"]['ZIndex']=2;v0["17"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["17"]['Image']=[[rbxasset://textures/ui/GuiImagePlaceholder.png]];v0["17"]['Size']=UDim2.new(0,167,0,48);v0["17"]['Name']=[[Verify]];v0["17"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["17"]['Position']=UDim2.new(0.5,0,0.72986,0);v0["18"]=Instance.new("UICorner",v0["17"]);v0["18"]['CornerRadius']=UDim.new(0,15);v0["19"]=Instance.new("ImageLabel",v0["17"]);v0["19"]['BorderSizePixel']=0;v0["19"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["19"]['ImageTransparency']=0.6;v0["19"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["19"]['Image']=[[http://www.roblox.com/asset/?id=124583935158332]];v0["19"]['Size']=UDim2.new(0,267,0,148);v0["19"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["19"]['BackgroundTransparency']=1;v0["19"]['Name']=[[Shadow]];v0["19"]['Position']=UDim2.new(0.5,0,0.5,0);v0["1a"]=Instance.new("UIScale",v0["19"]);v0["1b"]=Instance.new("UIGradient",v0["19"]);v0["1b"]['Rotation']= -90;v0["1b"]['Transparency']=NumberSequence.new({NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(0.5,0),NumberSequenceKeypoint.new(1,0)});v0["1b"]['Offset']=Vector2.new(0, -0.7);v0["1b"]['Color']=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(211,74,255)),ColorSequenceKeypoint.new(1,Color3.fromRGB(109,83,255))});v0["1c"]=Instance.new("TextLabel",v0["17"]);v0["1c"]['TextWrapped']=true;v0["1c"]['ZIndex']=2;v0["1c"]['BorderSizePixel']=0;v0["1c"]['TextScaled']=true;v0["1c"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["1c"]['TextSize']=14;v0["1c"]['FontFace']=Font.new([[rbxasset://fonts/families/Jura.json]],Enum.FontWeight.Regular,Enum.FontStyle.Normal);v0["1c"]['TextColor3']=Color3.fromRGB(151,151,151);v0["1c"]['BackgroundTransparency']=1;v0["1c"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["1c"]['Size']=UDim2.new(1,0,1,0);v0["1c"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["1c"]['Text']=[[Verify]];v0["1c"]['Position']=UDim2.new(0.5,0,0.5,0);v0["1d"]=Instance.new("UITextSizeConstraint",v0["1c"]);v0["1d"]['MaxTextSize']=35;v0["1e"]=Instance.new("StringValue",v0["1c"]);v0["1e"]['Name']=[[TextTransparency]];v0["1e"]['Value']=[[TextTransparency]];v0["1f"]=Instance.new("StringValue",v0["17"]);v0["1f"]['Name']=[[Tween]];v0["1f"]['Value']=[[ButtonScale1]];v0["20"]=Instance.new("UIScale",v0["17"]);v0["21"]=Instance.new("StringValue",v0["17"]);v0["21"]['Name']=[[Checker]];v0["21"]['Value']=[[BackgroundTransparency]];v0["22"]=Instance.new("Frame",v0["2"]);v0["22"]['BorderSizePixel']=0;v0["22"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["22"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["22"]['ClipsDescendants']=true;v0["22"]['Size']=UDim2.new(1,0,1,0);v0["22"]['Position']=UDim2.new(0.5,0,0.5,0);v0["22"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["22"]['Name']=[[Bubbles]];v0["22"]['BackgroundTransparency']=1;v0["23"]=Instance.new("Frame",v0["22"]);v0["23"]['ZIndex']= -3;v0["23"]['BorderSizePixel']=0;v0["23"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["23"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["23"]['ClipsDescendants']=true;v0["23"]['Size']=UDim2.new(1,0,1,0);v0["23"]['Position']=UDim2.new(0.5,0,0.5,0);v0["23"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["23"]['Name']=[[CiEffect]];v0["23"]['BackgroundTransparency']=1;v0["24"]=Instance.new("ImageLabel",v0["23"]);v0["24"]['BorderSizePixel']=0;v0["24"]['SliceCenter']=Rect.new(90,50,90,113);v0["24"]['SliceScale']=2;v0["24"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["24"]['ScaleType']=Enum.ScaleType.Slice;v0["24"]['ImageTransparency']=0.8;v0["24"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["24"]['Image']=[[http://www.roblox.com/asset/?id=98602729133580]];v0["24"]['Size']=UDim2.new(0.38443,0,0.72759,0);v0["24"]['Visible']=false;v0["24"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["24"]['BackgroundTransparency']=1;v0["24"]['Name']=[[Icon]];v0["24"]['Position']=UDim2.new(0.5,0,0.5,0);v0["25"]=Instance.new("UIAspectRatioConstraint",v0["24"]);v0["25"]['AspectRatio']=1;v0["26"]=Instance.new("UIScale",v0["24"]);v0["27"]=Instance.new("UIGradient",v0["24"]);v0["27"]['Transparency']=NumberSequence.new({NumberSequenceKeypoint.new(0,0.4),NumberSequenceKeypoint.new(1,0.4)});v0["27"]['Color']=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(211,74,255)),ColorSequenceKeypoint.new(1,Color3.fromRGB(109,83,255))});v0["28"]=Instance.new("StringValue",v0["24"]);v0["28"]['Name']=[[Checker]];v0["28"]['Value']=[[Circles]];v0["29"]=Instance.new("LocalScript",v0["23"]);v0["2a"]=Instance.new("UIScale",v0["2"]);v0["2b"]=Instance.new("StringValue",v0["2"]);v0["2b"]['Name']=[[Scale]];v0["2b"]['Value']=[[Scale]];v0["2c"]=Instance.new("LocalScript",v0["2"]);v0["2c"]['Name']=[[Checker]];v0["2d"]=Instance.new("TextLabel",v0["2"]);v0["2d"]['TextWrapped']=true;v0["2d"]['ZIndex']=2;v0["2d"]['BorderSizePixel']=0;v0["2d"]['TextTransparency']=1;v0["2d"]['TextScaled']=true;v0["2d"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["2d"]['TextSize']=14;v0["2d"]['FontFace']=Font.new([[rbxasset://fonts/families/Jura.json]],Enum.FontWeight.Regular,Enum.FontStyle.Normal);v0["2d"]['TextColor3']=Color3.fromRGB(255,192,0);v0["2d"]['BackgroundTransparency']=1;v0["2d"]['AnchorPoint']=Vector2.new(0.5,0);v0["2d"]['Size']=UDim2.new(0.9,0,0.12293,0);v0["2d"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["2d"]['Text']=[[Nigger]];v0["2d"]['Name']=[[Warnings]];v0["2d"]['Position']=UDim2.new(0.5,0,0.86,0);v0["2e"]=Instance.new("StringValue",v0["2d"]);v0["2e"]['Name']=[[TextTransparency]];v0["2e"]['Value']=[[TextTransparency]];v0["2f"]=Instance.new("UITextSizeConstraint",v0["2d"]);v0["2f"]['MaxTextSize']=30;v0["30"]=Instance.new("Folder",v0["1"]);v0["30"]['Name']=[[Anims]];v0["31"]=Instance.new("ModuleScript",v0["30"]);v0["31"]['Name']=[[AnimHandle]];v0["32"]=Instance.new("Folder",v0["30"]);v0["32"]['Name']=[[LoadingMenuSounds]];v0["33"]=Instance.new("Sound",v0["32"]);v0["33"]['TimePosition']=0.1;v0["33"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["33"]['Name']=[[Click]];v0["33"]['SoundId']=[[rbxassetid://16627333206]];v0["34"]=Instance.new("Sound",v0["32"]);v0["34"]['TimePosition']=0.06;v0["34"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["34"]['Name']=[[Select]];v0["34"]['SoundId']=[[rbxassetid://16627335579]];v0["35"]=Instance.new("Sound",v0["32"]);v0["35"]['TimePosition']=0.1;v0["35"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["35"]['Name']=[[Appear]];v0["35"]['SoundId']=[[rbxassetid://16910733597]];v0["36"]=Instance.new("LocalScript",v0["35"]);v0["36"]['Name']=[[es]];v0["37"]=Instance.new("Sound",v0["32"]);v0["37"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["37"]['Name']=[[Appear2]];v0["37"]['SoundId']=[[rbxassetid://16910707712]];v0["38"]=Instance.new("LocalScript",v0["37"]);v0["38"]['Name']=[[es]];v0["39"]=Instance.new("Sound",v0["32"]);v0["39"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["39"]['Name']=[[Appear3]];v0["39"]['SoundId']=[[rbxassetid://16910703792]];v0["3a"]=Instance.new("LocalScript",v0["39"]);v0["3a"]['Name']=[[es]];v0["3b"]=Instance.new("Sound",v0["32"]);v0["3b"]['Volume']=0.03;v0["3b"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["3b"]['Name']=[[Finish]];v0["3b"]['SoundId']=[[rbxassetid://16910716993]];v0["3c"]=Instance.new("LocalScript",v0["3b"]);v0["3c"]['Name']=[[es]];v0["3d"]=Instance.new("Sound",v0["32"]);v0["3d"]['TimePosition']=0.1;v0["3d"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["3d"]['Name']=[[Click2]];v0["3d"]['SoundId']=[[rbxassetid://16911741814]];v0["3e"]=Instance.new("LocalScript",v0["3d"]);v0["3e"]['Name']=[[es]];v0["3f"]=Instance.new("Sound",v0["32"]);v0["3f"]['TimePosition']=0.1;v0["3f"]['Volume']=1;v0["3f"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["3f"]['Name']=[[Appear4]];v0["3f"]['SoundId']=[[rbxassetid://85715823736487]];v0["40"]=Instance.new("LocalScript",v0["3f"]);v0["40"]['Name']=[[es]];v0["41"]=Instance.new("Sound",v0["32"]);v0["41"]['TimePosition']=0.1;v0["41"]['Volume']=1;v0["41"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["41"]['Name']=[[Appear5]];v0["41"]['SoundId']=[[rbxassetid://94818445584925]];v0["42"]=Instance.new("LocalScript",v0["41"]);v0["42"]['Name']=[[es]];v0["43"]=Instance.new("Sound",v0["32"]);v0["43"]['TimePosition']=0.1;v0["43"]['Volume']=1;v0["43"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["43"]['Name']=[[Appear6]];v0["43"]['SoundId']=[[rbxassetid://81884270594069]];v0["44"]=Instance.new("LocalScript",v0["43"]);v0["44"]['Name']=[[es]];v0["45"]=Instance.new("Sound",v0["32"]);v0["45"]['TimePosition']=0.1;v0["45"]['Volume']=1;v0["45"]['RollOffMode']=Enum.RollOffMode.InverseTapered;v0["45"]['Name']=[[Appear7]];v0["45"]['SoundId']=[[rbxassetid://90846811405558]];v0["46"]=Instance.new("LocalScript",v0["45"]);v0["46"]['Name']=[[es]];v0["47"]=Instance.new("LocalScript",v0["30"]);v0["48"]=Instance.new("LocalScript",v0["30"]);v0["48"]['Name']=[[Loader]];v0["49"]=Instance.new("LocalScript",v0["30"]);v0["4a"]=Instance.new("Frame",v0["1"]);v0["4a"]['BorderSizePixel']=0;v0["4a"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["4a"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["4a"]['Size']=UDim2.new(1,0,1,0);v0["4a"]['Position']=UDim2.new(0.5,0,0.5,0);v0["4a"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["4a"]['BackgroundTransparency']=1;v0["4b"]=Instance.new("Frame",v0["4a"]);v0["4b"]['ZIndex']= -3;v0["4b"]['BorderSizePixel']=0;v0["4b"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["4b"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["4b"]['ClipsDescendants']=true;v0["4b"]['Size']=UDim2.new(1,0,1,0);v0["4b"]['Position']=UDim2.new(0.5,0,0.5,0);v0["4b"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["4b"]['Name']=[[CiEffect]];v0["4b"]['BackgroundTransparency']=1;v0["4c"]=Instance.new("ImageLabel",v0["4b"]);v0["4c"]['ZIndex']=0;v0["4c"]['BorderSizePixel']=0;v0["4c"]['SliceCenter']=Rect.new(90,50,90,113);v0["4c"]['SliceScale']=2;v0["4c"]['BackgroundColor3']=Color3.fromRGB(255,255,255);v0["4c"]['ScaleType']=Enum.ScaleType.Slice;v0["4c"]['ImageTransparency']=0.8;v0["4c"]['AnchorPoint']=Vector2.new(0.5,0.5);v0["4c"]['Image']=[[http://www.roblox.com/asset/?id=98602729133580]];v0["4c"]['Size']=UDim2.new(0.38443,0,0.72759,0);v0["4c"]['Visible']=false;v0["4c"]['BorderColor3']=Color3.fromRGB(0,0,0);v0["4c"]['BackgroundTransparency']=1;v0["4c"]['Name']=[[Icon]];v0["4c"]['Position']=UDim2.new(0.5,0,0.5,0);v0["4d"]=Instance.new("UIAspectRatioConstraint",v0["4c"]);v0["4d"]['AspectRatio']=1;v0["4e"]=Instance.new("UIScale",v0["4c"]);v0["4f"]=Instance.new("LocalScript",v0["4b"]);v0["50"]=Instance.new("StringValue",v0["4f"]);v0["50"]['Name']=[[Checker]];v0["50"]['Value']=[[Circles]];local v392=require;local v393={};local function v394(v411) local v412=v393[v411];if v412 then if  not v412.Required then v412.Required=true;v412.Value=v412.Closure();end return v412.Value;end return v392(v411);end v393[v0["31"]]={Closure=function() local v413=v0["31"];local v414=game:GetService("TweenService");local v415=v413.Parent;local v416=game:GetService("Players").LocalPlayer;local v417=workspace.CurrentCamera;local v418=game:GetService("Lighting");local v419=Instance.new("BlurEffect");v419.Parent=game:GetService("Lighting");v419.Name="blur";v419.Size=0;local v423=v418:WaitForChild("blur");local v424=game:GetService("RunService");local v425=v416:GetMouse();local v426={};v426.Scale=function(v491,v492,v493,v494,v495,v496,v497) v414:Create(v491.UIScale,TweenInfo.new(v492,Enum.EasingStyle[v493],Enum.EasingDirection[v494],v495,v496),{Scale=v497}):Play();end;v426.Position=function(v498,v499,v500,v501,v502,v503,v504,v505,v506,v507,v508) local v509=v414:Create(v498,TweenInfo.new(v499,Enum.EasingStyle[v500],Enum.EasingDirection[v501],v502,v503),{Position=UDim2.new(v504,0,v505,0)});v509:Play();if (v506==true) then v509.Completed:Connect(function() v498.Position=UDim2.fromScale(v507,v508);end);else end end;v426.Size=function(v510,v511,v512,v513,v514,v515,v516,v517,v518) v414:Create(v510,TweenInfo.new(v511,Enum.EasingStyle[v512],Enum.EasingDirection[v513],v514,v515),{Size=UDim2.new(v516,0,v517,0)}):Play();end;v426.Corner=function(v519,v520,v521,v522,v523,v524,v525,v526) v414:Create(v519,TweenInfo.new(v520,Enum.EasingStyle[v521],Enum.EasingDirection[v522],v523,v524),{CornerRadius=UDim.new(v525,v526)}):Play();end;v426.Thickness=function(v527,v528,v529,v530,v531,v532,v533) v414:Create(v527,TweenInfo.new(v528,Enum.EasingStyle[v529],Enum.EasingDirection[v530],v531,v532),{Thickness=v533}):Play();end;v426.SliceScale=function(v534,v535,v536,v537,v538,v539,v540) v414:Create(v534,TweenInfo.new(v535,Enum.EasingStyle[v536],Enum.EasingDirection[v537],v538,v539),{SliceScale=v540}):Play();end;v426.SliceCenter=function(v541,v542,v543,v544,v545,v546,v547,v548,v549,v550) v414:Create(v541,TweenInfo.new(v542,Enum.EasingStyle[v543],Enum.EasingDirection[v544],v545,v546),{SliceCenter=Rect.new(v547,v548,v549,v550)}):Play();end;v426.TileSize=function(v551,v552,v553,v554,v555,v556,v557,v558) v414:Create(v551,TweenInfo.new(v552,Enum.EasingStyle[v553],Enum.EasingDirection[v554],v555,v556),{TileSize=UDim2.new(v557,0,v558,0)}):Play();end;v426.TextTween=function(v559,v560,v561,v562,v563,v564,v565,v566) local v567=Instance.new("IntValue");v567.Parent=v560;v567.Value=v566;v414:Create(v559,TweenInfo.new(v561,Enum.EasingStyle[v562],Enum.EasingDirection[v563],v564,v565),{Value=tostring(v566)}):Play();end;v426.BackgroundColor=function(v570,v571,v572,v573,v574,v575,v576,v577,v578) v414:Create(v570,TweenInfo.new(v571,Enum.EasingStyle[v572],Enum.EasingDirection[v573],v574,v575),{BackgroundColor3=Color3.fromRGB(v576,v577,v578)}):Play();end;v426.ImageColor=function(v579,v580,v581,v582,v583,v584,v585,v586,v587) v414:Create(v579,TweenInfo.new(v580,Enum.EasingStyle[v581],Enum.EasingDirection[v582],v583,v584),{ImageColor3=Color3.fromRGB(v585,v586,v587)}):Play();end;v426.TextColor=function(v588,v589,v590,v591,v592,v593,v594,v595,v596) v414:Create(v588,TweenInfo.new(v589,Enum.EasingStyle[v590],Enum.EasingDirection[v591],v592,v593),{TextColor3=Color3.fromRGB(v594,v595,v596)}):Play();end;v426.BackgroundTransparency=function(v597,v598,v599,v600,v601,v602,v603) v414:Create(v597,TweenInfo.new(v598,Enum.EasingStyle[v599],Enum.EasingDirection[v600],v601,v602),{BackgroundTransparency=v603}):Play();end;v426.TextTransparency=function(v604,v605,v606,v607,v608,v609,v610) v414:Create(v604,TweenInfo.new(v605,Enum.EasingStyle[v606],Enum.EasingDirection[v607],v608,v609),{TextTransparency=v610}):Play();end;v426.ImageTransparency=function(v611,v612,v613,v614,v615,v616,v617) v414:Create(v611,TweenInfo.new(v612,Enum.EasingStyle[v613],Enum.EasingDirection[v614],v615,v616),{ImageTransparency=v617}):Play();end;v426.Transparency=function(v618,v619,v620,v621,v622,v623,v624) v414:Create(v618,TweenInfo.new(v619,Enum.EasingStyle[v620],Enum.EasingDirection[v621],v622,v623),{Transparency=v624}):Play();end;v426.Rotation=function(v625,v626,v627,v628,v629,v630,v631,v632,v633) local v634=v414:Create(v625,TweenInfo.new(v626,Enum.EasingStyle[v627],Enum.EasingDirection[v628],v629,v630),{Rotation=v631});v634:Play();if (v632==true) then v634.Completed:Connect(function() v625.Rotation=v633;end);else end end;v426.GradientOffset=function(v635,v636,v637,v638,v639,v640,v641,v642,v643,v644,v645) local v646=v414:Create(v635.UIGradient,TweenInfo.new(v636,Enum.EasingStyle[v637],Enum.EasingDirection[v638],v639,v640),{Offset=Vector2.new(v641,v642)});v646:Play();if (v643==true) then v646.Completed:Connect(function() v635.UIGradient.Offset=Vector2.new(v644,v645);end);end end;v426.Blur=function(v647,v648,v649,v650,v651,v652) v414:Create(v423,TweenInfo.new(v647,Enum.EasingStyle[v648],Enum.EasingDirection[v649],v650,v651),{Size=v652}):Play();end;v426.FOV=function(v653,v654,v655,v656,v657,v658) v414:Create(v417,TweenInfo.new(v653,Enum.EasingStyle[v654],Enum.EasingDirection[v655],v656,v657),{FieldOfView=v658}):Play();end;v426.SoundActivation=function(v659,v660,v661) local v662=v413.Parent[v660][v661]:Clone();v662.Parent=v659;wait();v662.Playing=true;v662.es.Enabled=true;end;v426.Loading=function(v666,v667) v414:Create(v666,TweenInfo.new(0.2,Enum.EasingStyle.Sine,Enum.EasingDirection.Out),{Size=UDim2.fromScale(v667/100 ,1)}):Play();end;v426.AppearEffect=function(v668,v669,v670,v671,v672,v673,v674,v675,v676,v677,v678,v679) local v680=v668.AbsoluteSize.X;local v681=v668.AbsoluteSize.Y;local v682=math.random(0,v680);local v683=math.random(v669,v670);local v684=math.random(v673,v674);wait();local v685=v668.Icon:Clone();v685.Parent=v668;v685.Visible=true;v685.Size=UDim2.new(0,v683,0,v683);v685.Position=UDim2.new(0,v682,1.2,0);wait();if (v672==true) then local v748=v414:Create(v685,TweenInfo.new(v684,Enum.EasingStyle[v675],Enum.EasingDirection[v676],v677,v678),{Position=UDim2.new(0,v685.Position.X.Offset,v679,0)});v748:Play();v748.Completed:Connect(function() v685:Destroy();end);else local v749=v414:Create(v685,TweenInfo.new(v671,Enum.EasingStyle[v675],Enum.EasingDirection[v676],v677,v678),{Position=UDim2.new(0,v685.Position.X.Offset,v679,0)});v749:Play();v749.Completed:Connect(function() v685:Destroy();end);end end;v426.ThreeDRotation=function(v690,v691,v692,v693,v694,v695) local v691=v691;local v692=v692;local v693=v693;local v694=v694;if (v695==true) then local v750=tick();local v751=v694-(math.sin(v750 * v693 ) * v691) ;local v752=v694-(math.cos(v750 * v693 ) * v692) ;v690.Position=UDim2.fromScale(v751,v752);else local v754=tick();local v755=v694 + (math.sin(v754 * v693 ) * v691) ;local v756=v694 + (math.cos(v754 * v693 ) * v692) ;v690.Position=UDim2.fromScale(v755,v756);end end;v426.ScaleObjectAppear=function(v696,v697,v698,v699,v700,v701,v702) local v703=v415.DecalsHandle.AppearSEffect:Clone();v703.Position=UDim2.new(0,v425.X-v696.AbsolutePosition.X ,0,v425.Y-v696.AbsolutePosition.Y );v703.Parent=v696;v703.Visible=true;v703.UIScale.Scale=0;local v708=v414:Create(v703.UIScale,TweenInfo.new(v697,Enum.EasingStyle[v698],Enum.EasingDirection[v699],v700,v701),{Scale=v702});local v709=v414:Create(v703,TweenInfo.new(v697,Enum.EasingStyle[v698],Enum.EasingDirection[v699],v700,v701),{ImageTransparency=1});v708:Play();task.wait();v709:Play();v709.Completed:Connect(function() v703:Destroy();end);end;v426.RandomizeTypingEffect=function(v710,v711,v712,v713) local function v714() local v740={"#","@",".","&","$","^","*","_","~"};return v740[math.random(1, #v740)];end local v715=v711;local v716="";for v741=1, #v715 do local v742=v714();v710.Text="";v710.TextTransparency=0;v716=v716   .. v742 ;v710.Text=v716;if (v713==true) then v426.SoundActivation(v710,"LoadingMenuSounds","Appear3");else end task.wait(v712);v716=v716:sub(1, -2)   .. v715:sub(v741,v741) ;v710.Text=v716;task.wait(v712);end end;v426.Corrector=function(v717,v718,v719,v720,v721,v722,v723,v724) local v725=v414:Create(v717,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{BackgroundColor3=Color3.fromRGB(v722,v723,v724)});local v726=v414:Create(v717,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{BackgroundColor3=Color3.fromRGB(255,255,255)});local v727=v414:Create(v718,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{ImageColor3=Color3.fromRGB(v722,v723,v724)});local v728=v414:Create(v718,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{ImageColor3=Color3.fromRGB(255,255,255)});local v729=v414:Create(v719,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{Position=UDim2.new(0.53,0,0.5)});local v730=v414:Create(v719,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{Position=UDim2.new(0.5,0,0.5)});local v731=v414:Create(v719,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{Position=UDim2.new(0.47,0,0.5)});local v732=v414:Create(v720,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{TextTransparency=0});local v733=v414:Create(v720,TweenInfo.new(6,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut,0,false),{TextTransparency=1});v727:Play();v725:Play();v729:Play();v732:Play();v729.Completed:Connect(function() v731:Play();end);v720.Text=v721;v731.Completed:Connect(function() v733:Play();v730:Play();v726:Play();v728:Play();end);end;return v426;end};local function v396() local v454=v0["29"];local v455=game:GetService("RunService");local v456=v394(game:GetService("ReplicatedStorage"):WaitForChild("Anims").AnimHandle);while true do wait(0.6);v456.AppearEffect(v454.Parent,40,40,3,true,5,8,"Linear","InOut",0,false, -0.1);end end task.spawn(v396);local function v397() local v457=v0["2c"];local v458=game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI");local v459=v458.Background;local v460=v394(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI").Anims.AnimHandle);local v461=loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))();local v462=isfile("swaggaconfig3.lua");v461.script_id="a3c56376ef97033632409fa7b7572001";local v464={SaveKey="Valid"};local v465={SaveKey="Invalid"};local v466=game:GetService("HttpService");v459.Handle.Verify.Activated:Connect(function() local v735=v461.check_key(script_key or v459.Handle.KeyBox.TextBox.Text );if (v735.code=="KEY_VALID") then script_key=script_key or v459.Handle.KeyBox.TextBox.Text ;local v758={keys=v459.Handle.KeyBox.TextBox.Text};if v462 then writefile("swaggaconfig3.lua",v466:JSONEncode(v758));end if (game.PlaceId==4639625707) then game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI"):Destroy();game:GetService("Lighting"):WaitForChild("blur"):Destroy();loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a3c56376ef97033632409fa7b7572001.lua"))();elseif (game.PlaceId==18687417158) then game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI"):Destroy();game:GetService("Lighting"):WaitForChild("blur"):Destroy();loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5967eb0a3b8993b596dc42dfafec3e70.lua"))();end return;elseif (v735.code=="KEY_HWID_LOCKED") then v460.Corrector(v459,v459.Shadow,v459,v459.Warnings,"Key linked to a different HWID. Please reset it using our bot",0,85,255);if v462 then writefile("swaggaconfig3.lua",v466:JSONEncode(v465));end elseif (v735.code=="KEY_INCORRECT") then v460.Corrector(v459,v459.Shadow,v459,v459.Warnings,"Incorrect Key",255,94,97);if v462 then writefile("swaggaconfig3.lua",v466:JSONEncode(v465));end return;else v460.Corrector(v459,v459.Shadow,v459,v459.Warnings,"Incorrect Key",255,0,0);end end);end task.spawn(v397);local function v398() local v467=v0["36"];wait(1);v467.Parent:Destroy();end task.spawn(v398);local function v399() local v468=v0["38"];wait(4);v468.Parent:Destroy();end task.spawn(v399);local function v400() local v469=v0["3a"];wait(2);v469.Parent:Destroy();end task.spawn(v400);local function v401() local v470=v0["3c"];wait(2.04);v470.Parent:Destroy();end task.spawn(v401);local function v402() local v471=v0["3e"];wait(1);v471.Parent:Destroy();end task.spawn(v402);local function v403() local v472=v0["40"];wait(4);v472.Parent:Destroy();end task.spawn(v403);local function v404() local v473=v0["42"];wait(4);v473.Parent:Destroy();end task.spawn(v404);local function v405() local v474=v0["44"];wait(4);v474.Parent:Destroy();end task.spawn(v405);local function v406() local v475=v0["46"];wait(4);v475.Parent:Destroy();end task.spawn(v406);local function v407() local v476=v0["47"];local v477=game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI");local v478=v477.Background;local v479=v394(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI").Anims.AnimHandle);for v736,v737 in pairs(v478:GetDescendants()) do if (v737:IsA("StringValue") and (v737.Value=="ButtonScale1")) then v737.Parent.MouseEnter:Connect(function() v479.Scale(v737.Parent,0.1,"Linear","InOut",0,false,1.05);v479.ImageTransparency(v737.Parent.Shadow,0.3,"Linear","InOut",0,false,0.4);end);v737.Parent.MouseLeave:Connect(function() v479.Scale(v737.Parent,0.1,"Linear","InOut",0,false,1);v479.ImageTransparency(v737.Parent.Shadow,0.3,"Linear","InOut",0,false,0.6);end);v737.Parent.Activated:Connect(function() v479.ImageTransparency(v737.Parent.Shadow,0.1,"Linear","InOut",0,true,0.5);end);elseif (v737:IsA("StringValue") and (v737.Value=="TextBoxScale1")) then v737.Parent.MouseEnter:Connect(function() v479.Scale(v737.Parent,0.1,"Linear","InOut",0,false,1.08);v479.ImageTransparency(v737.Parent.Shadow,0.3,"Linear","InOut",0,false,0.4);end);v737.Parent.MouseLeave:Connect(function() v479.Scale(v737.Parent,0.1,"Linear","InOut",0,false,1);v479.ImageTransparency(v737.Parent.Shadow,0.3,"Linear","InOut",0,false,0.6);end);end end end task.spawn(v407);local function v408() local v480=v0["48"];local v481=game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI");local v482=v481.Background;local v483=v394(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI").Anims.AnimHandle);v483.Blur(0,"Linear","InOut",0,false,0);v481.Frame.CiEffect.LocalScript.Enabled=false;v482.Bubbles.CiEffect.LocalScript.Enabled=false;v482.BackgroundTransparency=0;for v738,v739 in pairs(v481:GetDescendants()) do if (v739:IsA("StringValue") and (v739.Value=="Scale")) then v483.Scale(v739.Parent,0,"Linear","InOut",0,false,0);elseif (v739:IsA("StringValue") and (v739.Value=="TextTransparency")) then v483.TextTransparency(v739.Parent,0,"Linear","InOut",0,false,1);elseif (v739:IsA("StringValue") and (v739.Value=="BackgroundTransparency")) then v483.BackgroundTransparency(v739.Parent,0,"Linear","InOut",0,false,1);end end v483.Blur(1,"Back","Out",0,false,100);v483.FOV(1,"Back","Out",0,false,60);task.wait(1);v483.FOV(1,"Back","Out",0,false,70);v483.Scale(v482,0.6,"Back","Out",0,false,1);task.wait(0.6);v483.BackgroundTransparency(v482,1,"Back","In",0,false,0.3);v483.Scale(v482.Shadow,1,"Back","Out",0,false,1);task.wait(1);v483.TextTransparency(v482.UpText,1,"Back","Out",0,false,0);task.wait(0.6);v483.GradientOffset(v482.Handle.KeyBox.Shadow,1,"Linear","Out",0,false,0,0.7);v483.BackgroundTransparency(v482.Handle.KeyBox,1,"Linear","Out",0,false,0,0.7);task.wait(0.7);v483.GradientOffset(v482.Handle.Verify.Shadow,1,"Linear","Out",0,false,0,0.7);v483.BackgroundTransparency(v482.Handle.Verify,1,"Quad","Out",0,false,0);task.wait(0.7);v483.ImageTransparency(v482.Handle.KeyBox.Shadow,1,"Quad","InOut",0,true,0.2);v483.ImageTransparency(v482.Handle.Verify.Shadow,1,"Quad","InOut",0,true,0.2);task.wait(0.7);v483.TextTransparency(v482.Handle.KeyBox.TextBox,1,"Quad","Out",0,false,0);v483.TextTransparency(v482.Handle.Verify.TextLabel,1,"Quad","Out",0,false,0);v481.Frame.CiEffect.LocalScript.Enabled=true;end task.spawn(v408);local function v409() local v487=v0["49"];if game:IsLoaded() then local v745=game:GetService("HttpService");local v746=isfile("swaggaconfig3.lua");local v747={SaveKey=nil};if v746 then for v764,v765 in next,v745:JSONDecode(readfile("swaggaconfig3.lua")) do if (v765=="Invalid") then else game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI"):Destroy();game:GetService("Lighting"):WaitForChild("blur"):Destroy();if (game.PlaceId==4639625707) then script_key=v765;loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a3c56376ef97033632409fa7b7572001.lua"))();elseif (game.PlaceId==18687417158) then script_key=v765;loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5967eb0a3b8993b596dc42dfafec3e70.lua"))();end end end else writefile("swaggaconfig3.lua",v745:JSONEncode(v747));end end end task.spawn(v409);local function v410() local v488=v0["4f"];local v489=game:GetService("RunService");local v490=v394(game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyUI").Anims.AnimHandle);while true do wait(0.6);v490.AppearEffect(v488.Parent,150,150,3,true,5,8,"Linear","InOut",0,false, -0.1);end end task.spawn(v410);return v0["1"],v394;
+
+-- StarterGui.KeyLogin.Background
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(11, 11, 11);
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2"]["Size"] = UDim2.new(0.33, 0, 0.3, 0);
+G2L["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Background]];
+
+
+-- StarterGui.KeyLogin.Background.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.KeyLogin.Background.TopText
+G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextScaled"] = true;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BackgroundTransparency"] = 1;
+G2L["4"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["4"]["Size"] = UDim2.new(0.8, 0, 0.13, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[SWAGGA KEY]];
+G2L["4"]["Name"] = [[TopText]];
+G2L["4"]["Position"] = UDim2.new(0.5, 0, 0.03, 0);
+
+
+-- StarterGui.KeyLogin.Background.TopText.UITextSizeConstraint
+G2L["5"] = Instance.new("UITextSizeConstraint", G2L["4"]);
+G2L["5"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.KeyLogin.Background.KeyBox
+G2L["6"] = Instance.new("Frame", G2L["2"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
+G2L["6"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6"]["Size"] = UDim2.new(0.723, 0, 0.3, 0);
+G2L["6"]["Position"] = UDim2.new(0.499, 0, 0.43, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Name"] = [[KeyBox]];
+G2L["6"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.KeyLogin.Background.KeyBox.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.KeyLogin.Background.KeyBox.TextBox
+G2L["8"] = Instance.new("TextBox", G2L["6"]);
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["TextScaled"] = true;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["8"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["8"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[]];
+G2L["8"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.KeyLogin.Background.KeyBox.TextBox.UITextSizeConstraint
+G2L["9"] = Instance.new("UITextSizeConstraint", G2L["8"]);
+G2L["9"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.KeyLogin.Background.Check
+G2L["a"] = Instance.new("ImageButton", G2L["2"]);
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["AutoButtonColor"] = false;
+G2L["a"]["ImageTransparency"] = 1;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
+G2L["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["a"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["a"]["Size"] = UDim2.new(0.37834, 0, 0.2, 0);
+G2L["a"]["BackgroundTransparency"] = 0.5;
+G2L["a"]["Name"] = [[Check]];
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Position"] = UDim2.new(0.32667, 0, 0.78893, 0);
+
+
+-- StarterGui.KeyLogin.Background.Check.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
+G2L["b"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.KeyLogin.Background.Check.TextLabel
+G2L["c"] = Instance.new("TextLabel", G2L["a"]);
+G2L["c"]["TextWrapped"] = true;
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["TextScaled"] = true;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["TextSize"] = 14;
+G2L["c"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["c"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Text"] = [[Verify]];
+G2L["c"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.KeyLogin.Background.Check.TextLabel.UITextSizeConstraint
+G2L["d"] = Instance.new("UITextSizeConstraint", G2L["c"]);
+G2L["d"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.KeyLogin.Background.Check.UIScale
+G2L["e"] = Instance.new("UIScale", G2L["a"]);
+
+
+
+-- StarterGui.KeyLogin.Background.GetKey
+G2L["f"] = Instance.new("ImageButton", G2L["2"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["AutoButtonColor"] = false;
+G2L["f"]["ImageTransparency"] = 1;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
+G2L["f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["f"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["f"]["Size"] = UDim2.new(0.29375, 0, 0.2, 0);
+G2L["f"]["BackgroundTransparency"] = 0.5;
+G2L["f"]["Name"] = [[GetKey]];
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Position"] = UDim2.new(0.71362, 0, 0.78893, 0);
+
+
+-- StarterGui.KeyLogin.Background.GetKey.UICorner
+G2L["10"] = Instance.new("UICorner", G2L["f"]);
+G2L["10"]["CornerRadius"] = UDim.new(0, 10);
+
+
+-- StarterGui.KeyLogin.Background.GetKey.TextLabel
+G2L["11"] = Instance.new("TextLabel", G2L["f"]);
+G2L["11"]["TextWrapped"] = true;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextScaled"] = true;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["FontFace"] = Font.new([[rbxassetid://12187371324]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["11"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[Get Key]];
+G2L["11"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.KeyLogin.Background.GetKey.TextLabel.UITextSizeConstraint
+G2L["12"] = Instance.new("UITextSizeConstraint", G2L["11"]);
+G2L["12"]["MaxTextSize"] = 30;
+
+
+-- StarterGui.KeyLogin.Background.GetKey.UIScale
+G2L["13"] = Instance.new("UIScale", G2L["f"]);
+
+
+
+-- StarterGui.KeyLogin.Background.GKNeo
+G2L["14"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["14"]["ZIndex"] = -99;
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["ImageTransparency"] = 0.7;
+G2L["14"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["14"]["Image"] = [[http://www.roblox.com/asset/?id=139588420133887]];
+G2L["14"]["Size"] = UDim2.new(0, 192, 0, 114);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Name"] = [[GKNeo]];
+G2L["14"]["Position"] = UDim2.new(0.714, 0, 0.789, 0);
+
+
+-- StarterGui.KeyLogin.Background.GKNeo.UIGradient
+G2L["15"] = Instance.new("UIGradient", G2L["14"]);
+G2L["15"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 0, 209)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(205, 0, 255))};
+
+
+-- StarterGui.KeyLogin.Background.KBNeo
+G2L["16"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["16"]["ZIndex"] = -99;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["ImageColor3"] = Color3.fromRGB(21, 21, 21);
+G2L["16"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["16"]["Image"] = [[http://www.roblox.com/asset/?id=106722053600132]];
+G2L["16"]["Size"] = UDim2.new(0, 387, 0, 141);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Name"] = [[KBNeo]];
+G2L["16"]["Position"] = UDim2.new(0.499, 0, 0.43, 0);
+
+
+-- StarterGui.KeyLogin.Background.KBNeo.UIGradient
+G2L["17"] = Instance.new("UIGradient", G2L["16"]);
+G2L["17"]["Enabled"] = false;
+G2L["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(94, 116, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(197, 145, 255))};
+
+
+-- StarterGui.KeyLogin.Background.VNeo
+G2L["18"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["18"]["ZIndex"] = -99;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["ImageColor3"] = Color3.fromRGB(21, 21, 21);
+G2L["18"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["18"]["Image"] = [[http://www.roblox.com/asset/?id=139588420133887]];
+G2L["18"]["Size"] = UDim2.new(0, 231, 0, 114);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Name"] = [[VNeo]];
+G2L["18"]["Position"] = UDim2.new(0.327, 0, 0.789, 0);
+
+
+-- StarterGui.KeyLogin.Background.VNeo.UIGradient
+G2L["19"] = Instance.new("UIGradient", G2L["18"]);
+G2L["19"]["Enabled"] = false;
+G2L["19"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(94, 116, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(197, 145, 255))};
+
+
+-- StarterGui.KeyLogin.Background.UIAspectRatioConstraint
+G2L["1a"] = Instance.new("UIAspectRatioConstraint", G2L["2"]);
+G2L["1a"]["AspectRatio"] = 1.67132;
+
+
+-- StarterGui.KeyLogin.Anims
+G2L["1b"] = Instance.new("Folder", G2L["1"]);
+G2L["1b"]["Name"] = [[Anims]];
+
+
+-- StarterGui.KeyLogin.Anims.AnimHandle
+G2L["1c"] = Instance.new("ModuleScript", G2L["1b"]);
+G2L["1c"]["Name"] = [[AnimHandle]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds
+G2L["1d"] = Instance.new("Folder", G2L["1b"]);
+G2L["1d"]["Name"] = [[LoadingMenuSounds]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Click
+G2L["1e"] = Instance.new("Sound", G2L["1d"]);
+G2L["1e"]["TimePosition"] = 0.1;
+G2L["1e"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["1e"]["Name"] = [[Click]];
+G2L["1e"]["SoundId"] = [[rbxassetid://16627333206]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Select
+G2L["1f"] = Instance.new("Sound", G2L["1d"]);
+G2L["1f"]["TimePosition"] = 0.06;
+G2L["1f"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["1f"]["Name"] = [[Select]];
+G2L["1f"]["SoundId"] = [[rbxassetid://16627335579]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear
+G2L["20"] = Instance.new("Sound", G2L["1d"]);
+G2L["20"]["TimePosition"] = 0.1;
+G2L["20"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["20"]["Name"] = [[Appear]];
+G2L["20"]["SoundId"] = [[rbxassetid://16910733597]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear.es
+G2L["21"] = Instance.new("LocalScript", G2L["20"]);
+G2L["21"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear2
+G2L["22"] = Instance.new("Sound", G2L["1d"]);
+G2L["22"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["22"]["Name"] = [[Appear2]];
+G2L["22"]["SoundId"] = [[rbxassetid://16910707712]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear2.es
+G2L["23"] = Instance.new("LocalScript", G2L["22"]);
+G2L["23"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear3
+G2L["24"] = Instance.new("Sound", G2L["1d"]);
+G2L["24"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["24"]["Name"] = [[Appear3]];
+G2L["24"]["SoundId"] = [[rbxassetid://16910703792]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear3.es
+G2L["25"] = Instance.new("LocalScript", G2L["24"]);
+G2L["25"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Finish
+G2L["26"] = Instance.new("Sound", G2L["1d"]);
+G2L["26"]["Volume"] = 0.03;
+G2L["26"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["26"]["Name"] = [[Finish]];
+G2L["26"]["SoundId"] = [[rbxassetid://16910716993]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Finish.es
+G2L["27"] = Instance.new("LocalScript", G2L["26"]);
+G2L["27"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Click2
+G2L["28"] = Instance.new("Sound", G2L["1d"]);
+G2L["28"]["TimePosition"] = 0.1;
+G2L["28"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["28"]["Name"] = [[Click2]];
+G2L["28"]["SoundId"] = [[rbxassetid://16911741814]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Click2.es
+G2L["29"] = Instance.new("LocalScript", G2L["28"]);
+G2L["29"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear4
+G2L["2a"] = Instance.new("Sound", G2L["1d"]);
+G2L["2a"]["TimePosition"] = 0.1;
+G2L["2a"]["Volume"] = 1;
+G2L["2a"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["2a"]["Name"] = [[Appear4]];
+G2L["2a"]["SoundId"] = [[rbxassetid://85715823736487]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear4.es
+G2L["2b"] = Instance.new("LocalScript", G2L["2a"]);
+G2L["2b"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear5
+G2L["2c"] = Instance.new("Sound", G2L["1d"]);
+G2L["2c"]["TimePosition"] = 0.1;
+G2L["2c"]["Volume"] = 1;
+G2L["2c"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["2c"]["Name"] = [[Appear5]];
+G2L["2c"]["SoundId"] = [[rbxassetid://94818445584925]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear5.es
+G2L["2d"] = Instance.new("LocalScript", G2L["2c"]);
+G2L["2d"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear6
+G2L["2e"] = Instance.new("Sound", G2L["1d"]);
+G2L["2e"]["TimePosition"] = 0.1;
+G2L["2e"]["Volume"] = 1;
+G2L["2e"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["2e"]["Name"] = [[Appear6]];
+G2L["2e"]["SoundId"] = [[rbxassetid://81884270594069]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear6.es
+G2L["2f"] = Instance.new("LocalScript", G2L["2e"]);
+G2L["2f"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear7
+G2L["30"] = Instance.new("Sound", G2L["1d"]);
+G2L["30"]["TimePosition"] = 0.1;
+G2L["30"]["Volume"] = 1;
+G2L["30"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["30"]["Name"] = [[Appear7]];
+G2L["30"]["SoundId"] = [[rbxassetid://90846811405558]];
+
+
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear7.es
+G2L["31"] = Instance.new("LocalScript", G2L["30"]);
+G2L["31"]["Name"] = [[es]];
+
+
+-- StarterGui.KeyLogin.Anims.LocalScript
+G2L["32"] = Instance.new("LocalScript", G2L["1b"]);
+
+
+
+-- StarterGui.KeyLogin.Anims.LocalScript
+G2L["33"] = Instance.new("LocalScript", G2L["1b"]);
+
+
+
+-- StarterGui.KeyLogin.Anims.LocalScript
+G2L["34"] = Instance.new("LocalScript", G2L["1b"]);
+
+
+
+-- StarterGui.KeyLogin.Neo
+G2L["35"] = Instance.new("ImageLabel", G2L["1"]);
+G2L["35"]["ZIndex"] = 0;
+G2L["35"]["BorderSizePixel"] = 0;
+G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["35"]["ImageColor3"] = Color3.fromRGB(11, 11, 11);
+G2L["35"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["35"]["Image"] = [[http://www.roblox.com/asset/?id=93960415050679]];
+G2L["35"]["Size"] = UDim2.new(0, 512, 0, 330);
+G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["35"]["BackgroundTransparency"] = 1;
+G2L["35"]["Name"] = [[Neo]];
+G2L["35"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- Require G2L wrapper
+local G2L_REQUIRE = require;
+local G2L_MODULES = {};
+local function require(Module:ModuleScript)
+    local ModuleState = G2L_MODULES[Module];
+    if ModuleState then
+        if not ModuleState.Required then
+            ModuleState.Required = true;
+            ModuleState.Value = ModuleState.Closure();
+        end
+        return ModuleState.Value;
+    end;
+    return G2L_REQUIRE(Module);
+end
+
+G2L_MODULES[G2L["1c"]] = {
+Closure = function()
+    local script = G2L["1c"];--LOCALS
+
+local TweenService = game:GetService("TweenService")
+
+local Core = script.Parent
+
+local player = game:GetService("Players").LocalPlayer
+
+local camera = workspace.CurrentCamera
+
+local UIEffects = game:GetService("Lighting")
+
+local bluradd = Instance.new("BlurEffect")
+
+bluradd.Parent = game:GetService("Lighting")
+
+bluradd.Name = "blur"
+
+bluradd.Size = 0
+
+local blur = UIEffects:WaitForChild('blur')
+
+local RunService = game:GetService("RunService")
+
+local Mouse = player:GetMouse()
+
+local module = {}
+
+--LOCALS
+
+
+--OBJECT MODIFICATIONS
+
+module.Scale = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,value)
+	
+	TweenService:Create(way.UIScale, 
+		
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+		
+		{Scale = value}):Play()
+	
+end
+
+module.Position = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,x,y,IsLooped,ResetValueX,ResetValueY)
+	
+	local tweenplay = TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Position = UDim2.new(x,0,y,0)})
+	
+	tweenplay:Play()
+
+	if IsLooped == true then
+		tweenplay.Completed:Connect(function()
+			way.Position = UDim2.fromScale(ResetValueX,ResetValueY)
+		end)
+	else
+		
+	end
+
+end
+
+module.Size = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,x,y,IsLooped)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Size = UDim2.new(x,0,y,0)}):Play()
+
+end
+
+module.Corner = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,s,o)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{CornerRadius = UDim.new(s,o)}):Play()
+
+end
+
+module.Thickness = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,val)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Thickness = val}):Play()
+
+end
+
+module.SliceScale = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,val)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{SliceScale = val}):Play()
+end
+
+module.SliceCenter = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,X0,Y0,X1,Y1)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{SliceCenter = Rect.new(X0,Y0,X1,Y1)}):Play()
+end
+
+module.TileSize = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,x,y)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{TileSize = UDim2.new(x,0,y,0)}):Play()
+end
+
+module.TextTween = function(way,parent,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,value)
+	
+	local IntClone = Instance.new("IntValue")
+	
+	IntClone.Parent = parent
+	
+	IntClone.Value = value
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Value = tostring(value)}):Play()
+
+end
+
+--OBJECT MODIFICATIONS
+
+
+--COLOR MODULES
+
+module.BackgroundColor = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,r,g,b)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{BackgroundColor3 = Color3.fromRGB(r,g,b)}):Play()
+
+end
+
+module.ImageColor = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,r,g,b)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{ImageColor3 = Color3.fromRGB(r,g,b)}):Play()
+
+end
+
+module.TextColor = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,r,g,b)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{TextColor3 = Color3.fromRGB(r,g,b)}):Play()
+
+end
+
+--COLOR MODULES
+
+
+--TRANSPARENCYMODULES
+
+module.BackgroundTransparency = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{BackgroundTransparency = Value}):Play()
+
+end
+
+module.TextTransparency = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{TextTransparency = Value}):Play()
+
+end
+
+module.ImageTransparency = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{ImageTransparency = Value}):Play()
+
+end
+
+module.Transparency = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+
+	TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Transparency = Value}):Play()
+
+end
+
+module.Rotation = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value,IsLooped,ResetValue)
+
+	local tween = TweenService:Create(way, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Rotation = Value})
+	
+		tween:Play()
+	
+	if IsLooped == true then
+		
+		tween.Completed:Connect(function()
+			way.Rotation = ResetValue
+		end)
+		
+	else
+		
+	end
+
+end
+
+module.GradientOffset = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,x,y,IsLooped,ResetValueX,ResetValueY)
+
+local tween =	TweenService:Create(way.UIGradient, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Offset = Vector2.new(x,y)})
+	
+	tween:Play()
+	
+	if IsLooped == true then
+
+		tween.Completed:Connect(function()
+			way.UIGradient.Offset = Vector2.new(ResetValueX,ResetValueY)
+		end)
+		end
+		
+	end
+
+--TRANSPARENCY MODULES
+
+--EFFECT MODULES
+
+module.Blur = function(speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+	TweenService:Create(blur, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Size = Value}):Play()
+end
+
+module.FOV = function(speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+	TweenService:Create(camera, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{FieldOfView = Value}):Play()
+end
+
+--EFFECT MODULES
+
+
+--SOUNDS
+
+module.SoundActivation = function(way,FolderName,SoundName)
+	local SoundClone = script.Parent[FolderName][SoundName]:Clone()
+	SoundClone.Parent = way
+	wait()
+	SoundClone.Playing = true
+	SoundClone.es.Enabled = true
+end
+
+--SOUNDS
+
+--EXTRA
+
+module.Loading = function(way,perc)
+	TweenService:Create(way, TweenInfo.new(0.2,Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Size = UDim2.fromScale(perc/100, 1)}):Play()	
+end
+
+module.AppearEffect = function(way,m,n,StaticSpeed,IsRspeed,f,t,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,y)
+	
+	--Size
+
+	local AbsoluteSizeX = way.AbsoluteSize.X
+
+	local AbsoluteSizeY = way.AbsoluteSize.Y
+
+	--Size
+
+	--Randomize
+
+	local RandomizeX = math.random(0,AbsoluteSizeX)
+
+	local RandomSize = math.random(m,n)
+	
+	local RandomSpeed = math.random(f,t)
+
+	--Randomize
+	
+	wait()
+	
+	--Main
+
+	local Clone = way.Icon:Clone()
+	
+	Clone.Parent = way
+
+	Clone.Visible = true
+
+	Clone.Size = UDim2.new(0,RandomSize,0,RandomSize)
+	
+	Clone.Position = UDim2.new(0,RandomizeX,1.2,0)
+	
+	wait()  
+	
+	if IsRspeed == true then
+		
+		local TweenSpawn = TweenService:Create(Clone, 
+
+			TweenInfo.new(RandomSpeed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+			{Position = UDim2.new(0,Clone.Position.X.Offset,y,0)})
+
+		TweenSpawn:Play()
+
+		TweenSpawn.Completed:Connect(function()
+			Clone:Destroy()
+		end)
+		
+	else
+		
+
+		local TweenSpawn = TweenService:Create(Clone, 
+
+			TweenInfo.new(StaticSpeed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+			{Position = UDim2.new(0,Clone.Position.X.Offset,y,0)})
+
+		TweenSpawn:Play()
+
+		TweenSpawn.Completed:Connect(function()
+			Clone:Destroy()
+		end)
+		
+	end
+	
+	--Main
+		
+end
+
+module.ThreeDRotation = function(way,rangeX,rangeY,speed,offset,IsReversed)
+	local rangeX = rangeX  -- Range of rotationX
+	local rangeY = rangeY -- Range of rotationY
+	local speed = speed  -- Speed of rotation
+	local offset = offset -- Position offset from the top-left corner
+	
+	if IsReversed == true then
+		local t = tick()
+		local xPos = offset - math.sin(t * speed) * rangeX
+		local yPos = offset - math.cos(t * speed) * rangeY
+		way.Position = UDim2.fromScale(xPos, yPos)
+	else
+		local t = tick()
+		local xPos = offset + math.sin(t * speed) * rangeX
+		local yPos = offset + math.cos(t * speed) * rangeY
+		way.Position = UDim2.fromScale(xPos, yPos)
+	end
+end
+
+module.ScaleObjectAppear = function(way,speed,EasingStyleType,EasingDirectionType,RepeatCount,IsReversed,Value)
+	
+	local Clone = Core.DecalsHandle.AppearSEffect:Clone()
+	
+	Clone.Position = UDim2.new(0,Mouse.X-way.AbsolutePosition.X,0,Mouse.Y-way.AbsolutePosition.Y)
+	Clone.Parent = way
+	Clone.Visible = true
+	Clone.UIScale.Scale = 0
+	
+	local TweenSpawn = TweenService:Create(Clone.UIScale, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{Scale = Value})
+	
+	local TweenSpawn2 = TweenService:Create(Clone, 
+
+		TweenInfo.new(speed, Enum.EasingStyle[EasingStyleType], Enum.EasingDirection[EasingDirectionType],RepeatCount,IsReversed),
+
+		{ImageTransparency = 1})
+	
+
+	TweenSpawn:Play()
+	
+	task.wait()
+	
+	TweenSpawn2:Play()
+	
+	TweenSpawn2.Completed:Connect(function()
+		Clone:Destroy()
+	end)
+	
+end
+
+module.RandomizeTypingEffect = function(way,ttext,speed,IsSound)
+	
+	local function generateRandomCharacter()
+		local symbols = {"#", "@", ".", "&", "$", "^", "*", "_", "~"}
+		return symbols[math.random(1, #symbols)]
+	end
+
+	local text = ttext
+	local displayedText = ""
+
+	for i = 1, #text do
+		local randomCharacter = generateRandomCharacter()
+		
+		way.Text = ""
+		
+		way.TextTransparency = 0
+		
+		displayedText = displayedText .. randomCharacter
+		way.Text = displayedText
+		if IsSound == true then
+			module.SoundActivation(way,"LoadingMenuSounds","Appear3")
+		else
+			
+		end
+		task.wait(speed)
+
+		displayedText = displayedText:sub(1, -2) .. text:sub(i, i) 
+		way.Text = displayedText
+		task.wait(speed)
+	end
+	
+	
+end
+
+--EXTRA
+
+
+return module
+
+end;
+};
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear.es
+local function C_21()
+local script = G2L["21"];
+	wait(1)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_21);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear2.es
+local function C_23()
+local script = G2L["23"];
+	wait(4)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_23);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear3.es
+local function C_25()
+local script = G2L["25"];
+	wait(2)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_25);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Finish.es
+local function C_27()
+local script = G2L["27"];
+	wait(2.04)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_27);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Click2.es
+local function C_29()
+local script = G2L["29"];
+	wait(1)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_29);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear4.es
+local function C_2b()
+local script = G2L["2b"];
+	wait(4)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_2b);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear5.es
+local function C_2d()
+local script = G2L["2d"];
+	wait(4)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_2d);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear6.es
+local function C_2f()
+local script = G2L["2f"];
+	wait(4)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_2f);
+-- StarterGui.KeyLogin.Anims.LoadingMenuSounds.Appear7.es
+local function C_31()
+local script = G2L["31"];
+	wait(4)
+	
+	script.Parent:Destroy()
+end;
+task.spawn(C_31);
+-- StarterGui.KeyLogin.Anims.LocalScript
+local function C_32()
+local script = G2L["32"];
+	local module = require(script.Parent.AnimHandle)
+	
+	local gui = script.Parent.Parent.Background
+	
+	
+	gui.KeyBox.MouseEnter:Connect(function()
+		gui.KBNeo.UIGradient.Enabled = true
+		module.ImageColor(gui.KBNeo,0.3,"Quad","In",0,false,200,200,200)
+	end)
+	
+	gui.KeyBox.MouseLeave:Connect(function()
+		module.ImageColor(gui.KBNeo,0.3,"Quad","In",0,false,20,20,20)
+		gui.KBNeo.UIGradient.Enabled = false
+	end)
+	
+	
+	gui.Check.MouseEnter:Connect(function()
+		gui.VNeo.UIGradient.Enabled = true
+		module.ImageColor(gui.VNeo,0.3,"Quad","In",0,false,200,200,200)
+	end)
+	
+	gui.Check.MouseLeave:Connect(function()
+		module.ImageColor(gui.VNeo,0.3,"Quad","In",0,false,20,20,20)
+		gui.VNeo.UIGradient.Enabled = false
+	end)
+	
+	gui.Check.MouseButton1Down:Connect(function()
+		module.Scale(gui.Check,0.1,"Quad","In",0,false,0.95)
+		module.Rotation(gui.VNeo.UIGradient,0.3,"Quad","In",0,true,360)
+	end)
+	
+	gui.Check.Activated:Connect(function()
+		module.Scale(gui.Check,0.1,"Quad","Out",0,false,1)
+		module.Rotation(gui.VNeo.UIGradient,0.3,"Quad","In",0,true,0)
+	end)
+	
+	
+	gui.GetKey.MouseEnter:Connect(function()
+		module.ImageTransparency(gui.GKNeo,0.3,"Quad","In",0,false,0)
+	end)
+	
+	gui.GetKey.MouseLeave:Connect(function()
+		module.ImageTransparency(gui.GKNeo,0.3,"Quad","In",0,false,0.7)
+	end)
+	
+	gui.GetKey.MouseButton1Down:Connect(function()
+		module.Scale(gui.GetKey,0.1,"Quad","In",0,false,0.95)
+		module.Rotation(gui.GKNeo.UIGradient,0.3,"Quad","In",0,true,360)
+	end)
+	
+	gui.GetKey.Activated:Connect(function()
+		module.Scale(gui.GetKey,0.1,"Quad","Out",0,false,1)
+		module.Rotation(gui.GKNeo.UIGradient,0.3,"Quad","In",0,true,0)
+	end)
+end;
+task.spawn(C_32);
+-- StarterGui.KeyLogin.Anims.LocalScript
+local function C_33()
+local script = G2L["33"];
+	if game:IsLoaded() then
+		local http = game:GetService("HttpService")
+		local checkfile = isfile("swaggaconfig3.lua")
+	
+		local functions = {
+			SaveKey = nil
+	
+		}
+	
+		if checkfile then
+			for i,v in next, http:JSONDecode(readfile('swaggaconfig3.lua')) do
+				if v == "Invalid" then
+					
+				else
+					script.Parent.Parent:Destroy()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/scyfxre/SwaggaChecker1.0/refs/heads/main/loader"))()
+				end
+			end
+		else
+			writefile('swaggaconfig3.lua',http:JSONEncode(functions))
+		end
+	
+	end
+end;
+task.spawn(C_33);
+-- StarterGui.KeyLogin.Anims.LocalScript
+local function C_34()
+local script = G2L["34"];
+	local gui = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("KeyLogin")
+	
+	local background = gui.Background
+	
+	local player = game:GetService("Players").LocalPlayer
+	
+	local Module = require(script.Parent.AnimHandle)
+	local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+	local checkfile = isfile("swaggaconfig3.lua")
+	local NotifyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/scyfxre/SwaggaChecker1.0/refs/heads/main/NotifyModule"))()
+	
+	if not shared.NotifyModule then
+		shared.NotifyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/scyfxre/SwaggaChecker1.0/refs/heads/main/NotifyModule"))()
+	end
+	
+	local Notify = shared.NotifyModule
+	
+	api.script_id = "a3c56376ef97033632409fa7b7572001"
+	
+	local functions = {
+		SaveKey = "Valid"
+	}
+	
+	local functions2 = {
+		SaveKey = "Invalid"
+	}
+	
+	background.GetKey.Activated:Connect(function()
+		setclipboard("https://ads.luarmor.net/get_key?for=zlo_rewards-FAcTGUyojCzG")
+		NotifyModule:Notify(5, "Get Key", "Link Copied To Your Clipboard")
+	end)
+	
+	local http = game:GetService("HttpService")
+	
+	background.Check.Activated:Connect(function()
+		local status = api.check_key(script_key or background.KeyBox.TextBox.Text);
+	
+		if (status.code == "KEY_VALID") then
+			
+			local keytab = {
+				keys = background.KeyBox.TextBox.Text
+			}
+	
+			if checkfile then
+				writefile('swaggaconfig3.lua',http:JSONEncode(keytab))
+			end
+			
+			script.Parent.Parent:Destroy()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/scyfxre/SwaggaChecker1.0/refs/heads/main/loader"))()
+			NotifyModule:Notify(5, "Successfully!","Successfully logged in")
+			return
+	
+		elseif (status.code == "KEY_HWID_LOCKED") then
+			
+			if checkfile then
+				writefile('swaggaconfig3.lua',http:JSONEncode(functions2))
+			end
+			
+			NotifyModule:Notify(5, "KEY HWID LOCKED", "Key linked to a different HWID. Please reset it using our bot")
+			
+		elseif (status.code == "KEY_INCORRECT") then
+			
+			if checkfile then
+				writefile('swaggaconfig3.lua',http:JSONEncode(functions2))
+			end
+			
+			NotifyModule:Notify(5, "KEY INCORRECT", "Key is wrong or deleted!")
+			
+			return    
+		else
+			
+			if checkfile then
+				writefile('swaggaconfig3.lua',http:JSONEncode(functions2))
+			end
+			
+			NotifyModule:Notify(5, "Key check failed:", "Key is wrong or deleted!")
+	
+	
+		end
+	end)
+end;
+task.spawn(C_34);
+
+return G2L["1"], require;
