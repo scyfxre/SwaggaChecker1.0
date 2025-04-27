@@ -1214,9 +1214,11 @@ local script = G2L["3c"];
 						script.Parent.Parent:Destroy()
 						if game.PlaceId == 4639625707 then
 							script_key = v
+							script.Parent.Parent.Background.Handle.Load.TextLabel.Text = "War Tycoon"
 							loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a3c56376ef97033632409fa7b7572001.lua"))()
 						elseif game.PlaceId == 18687417158 then
 							script_key = v
+							script.Parent.Parent.Background.Handle.Load.TextLabel.Text = "Forsaken"
 							loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5967eb0a3b8993b596dc42dfafec3e70.lua"))()
 						end
 					end
