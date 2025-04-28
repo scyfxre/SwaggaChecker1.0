@@ -1,1 +1,5 @@
-
+return {
+    IsPenalty = true,
+    IsOther = false,
+    IsAll = false
+}
